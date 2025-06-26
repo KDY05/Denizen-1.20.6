@@ -26,7 +26,8 @@ main_gui_toggle_task:
     - else:
         - flag server <[option]>:<[disabled]>
         - run <[option]>_toggle_task def.toggle:off
-    - playsound <[player]> sound:ENTITY_EXPERIENCE_ORB_PICKUP pitch:1
+    - if <[player]> != null:
+        - playsound <[player]> sound:ENTITY_EXPERIENCE_ORB_PICKUP pitch:1
 
 main_gui_inventory_1:
     type: inventory

@@ -6,7 +6,7 @@ fast_tick_init:
         - if !<server.has_flag[fast_tick]>:
             - flag server fast_tick:<&c>비활성화됨
         - else if <server.flag[fast_tick]> == <server.flag[text_enabled]>:
-            - tick rate amount:60
+            - tick rate amount:100
 
 main_gui_item_fast_tick:
     type: item
@@ -24,6 +24,6 @@ fast_tick_toggle_task:
     debug: false
     script:
     - if <[toggle]> == on:
-        - tick rate amount:60
+        - tick rate amount:100
     - else if <[toggle]> == off:
         - tick rate amount:20

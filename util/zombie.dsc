@@ -106,7 +106,12 @@ zombie_world:
         - playsound <player.location> sound:ENTITY_ZOMBIE_AMBIENT volume:0.5 pitch:1.0
         - actionbar "<&e>좀비의 완력으로 더 강하게 타격했다." targets:<player>
 
-        on player joins:
+        after player joins:
+        - if <server.flag[zombie]> == <server.flag[text_disabled]>:
+            - stop
+        - libsdisguise mob type:ZOMBIE target:<player> display_name:<player.name><&7>(였던것) self
+
+        after player dies:
         - if <server.flag[zombie]> == <server.flag[text_disabled]>:
             - stop
         - libsdisguise mob type:ZOMBIE target:<player> display_name:<player.name><&7>(였던것) self
